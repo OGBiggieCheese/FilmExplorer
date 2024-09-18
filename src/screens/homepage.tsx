@@ -24,16 +24,16 @@ function Homepage() {
         </div>
         <div className="cardContainer">
            <Card title="Deadpool" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Twister" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg" />
-           <Card title="Inside-out" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Despicable me 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
+           <Card title="Borderlands" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jtEZi4eZxDjxcDIeMbkQ8HmvRs1.jpg" />
+           <Card title="Rebel Ridge" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ymTgBQ8rCouE27oHpAUfgKEgRAj.jpg"/>
+           <Card title="Inside Out 2" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg"/>
+           <Card title="Mi villano favorito 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wTpzSDfbUuHPEgqgt5vwVtPHhrb.jpg"/>
+           <Card title="Beetlejuice 2" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kWJw7dCWHcfMLr0irTHAPIKrJ4I.jpg"/>
+           <Card title="Bad Boys: Ride or Die" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zp0Y7Nsl4UnWiwX4LxXQXgDfXSz.jpg"/>
+           <Card title="beetlejuice" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/2LanWSlqSOtyvQiIaoYz448oBSl.jpg"/>
+           <Card title="Twisters" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/50xgtaDR0xJkLSVghdTGUeMoPHP.jpg"/>
+           <Card title="Twilight of the Warriors: Walled In" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/PywbVPeIhBFc33QXktnhMaysmL.jpg"/>
+           <Card title="The Killer" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6PCnxKZZIVRanWb710pNpYVkCSw.jpg"/>
         </div>
      </section>
 
