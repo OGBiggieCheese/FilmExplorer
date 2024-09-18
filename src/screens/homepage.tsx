@@ -2,6 +2,7 @@ import Card from "../components/card";
 import Hero from "../components/hero";
 import { Carousel } from 'antd';
 import './homepage.scss';
+import Category from "../components/categories";
 
 
 function Homepage() {
@@ -24,7 +25,7 @@ function Homepage() {
           <h4 className="ver"> Ver más ➡</h4>
         
         </div>
-        <div className="cardContainer">
+        <div className="container">
            <Card title="Deadpool" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
            <Card title="Borderlands" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jtEZi4eZxDjxcDIeMbkQ8HmvRs1.jpg" />
            <Card title="Rebel Ridge" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ymTgBQ8rCouE27oHpAUfgKEgRAj.jpg"/>
@@ -45,9 +46,8 @@ function Homepage() {
           <img src="src/assets/triangle.svg" className="triangle"/>
           <h2 className="title">En cartelera</h2>
           <h4 className="ver"> Ver más ➡</h4>
-        
         </div>
-        <div className="cardContainer">
+        <div className="container">
            <Card title="The Crow" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/X9iFHeIYgfqoZImvdidx8b9v4R.jpg"/>
            <Card title="Romper el círculo" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/4c3IdUFnS8qd3qrMol1b3Rq5MqF.jpg" />
            <Card title="Longlegs" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uUXRqplQ9TWmKzDkFmWN1NuPsmb.jpg"/>
@@ -62,6 +62,21 @@ function Homepage() {
         </div>
      </section>
      
+
+     <section>
+        <div className="flex">
+          <img src="src/assets/triangle.svg" className="triangle"/>
+          <h2 className="title">Categorias</h2>
+          <h4 className="ver"> Ver más ➡</h4>
+        </div>
+        <div className="container">
+          <Category title="Acción" imageUrl="https://image.tmdb.org/t/p/original/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg" />
+          <Category title="Animación" imageUrl="https://media.themoviedb.org/t/p/w533_and_h300_bestv2/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg" />
+          <Category title="Comedia" imageUrl="https://media.themoviedb.org/t/p/w533_and_h300_bestv2/1wP1phHo2CROOqzv7Azs0MT5esU.jpg" />
+          <Category title="Terror" imageUrl="https://image.tmdb.org/t/p/original/Asg2UUwipAdE87MxtJy7SQo08XI.jpg" />
+          <Category title="Western" imageUrl="https://image.tmdb.org/t/p/original/x4biAVdPVCghBlsVIzB6NmbghIz.jpg" />
+        </div>
+     </section>
     </>
   )
 }

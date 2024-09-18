@@ -1,0 +1,27 @@
+.category {
+    position: relative;
+    width: 336px;
+    height: 160px; 
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 12px;
+  
+    .categoryImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%); 
+      z-index: -1;
+    }
+  
+    .categoryTitle {
+      font-weight: bold;
+      margin-top: 112px;
+      margin-left: 16px;
+      font-size: 1.2rem;
+    }
+}
