@@ -21,6 +21,8 @@ function Homepage() {
         <div className="flex">
           <img src="src/assets/triangle.svg" className="triangle"/>
           <h2 className="title">Lo más popular</h2>
+          <h4 className="ver"> Ver más ➡</h4>
+        
         </div>
         <div className="cardContainer">
            <Card title="Deadpool" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
@@ -36,7 +38,29 @@ function Homepage() {
            <Card title="The Killer" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6PCnxKZZIVRanWb710pNpYVkCSw.jpg"/>
         </div>
      </section>
+     
 
+     <section>
+        <div className="flex">
+          <img src="src/assets/triangle.svg" className="triangle"/>
+          <h2 className="title">En cartelera</h2>
+          <h4 className="ver"> Ver más ➡</h4>
+        
+        </div>
+        <div className="cardContainer">
+           <Card title="The Crow" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/X9iFHeIYgfqoZImvdidx8b9v4R.jpg"/>
+           <Card title="Romper el círculo" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/4c3IdUFnS8qd3qrMol1b3Rq5MqF.jpg" />
+           <Card title="Longlegs" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uUXRqplQ9TWmKzDkFmWN1NuPsmb.jpg"/>
+           <Card title="Kill" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/j8aqIMzHnVHgS98CD6lXtspSV2S.jpg"/>
+           <Card title="La maldición de Cenicienta" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/SFewWt1tXEqGq08oZqH1q78gzM.jpg"/>
+           <Card title="Transformers One" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ynqqkPy8RiawjGtWFIsF9pmYZtJ.jpg"/>
+           <Card title="Something in the Water" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mehUdQGRSbxTTOgT3zCctg5uj3F.jpg"/>
+           <Card title="Parpadea dos veces" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/a4o3f9dmxB9TyFNMncvwspSoVLJ.jpg"/>
+           <Card title="Kinds of Kindness" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7M8gZDAQsJP3BjibSt1kZ1tBvXl.jpg"/>
+           <Card title="La sustancia" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zQc1PITqFxZDbEmHlQgO5Mxc4Od.jpg"/>
+           <Card title="The Forge" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uT3xW3h0aFDRH0qBb8zNFzMHfTK.jpg"/>
+        </div>
+     </section>
      
     </>
   )

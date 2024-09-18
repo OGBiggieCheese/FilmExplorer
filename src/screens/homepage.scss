@@ -10,7 +10,9 @@
     width: 24px;
 }
 .flex{
+    margin-top: 2rem;
     display: flex;
+    align-items: center;
 }
 .cardContainer {
     overflow-y: hidden;
@@ -21,4 +23,8 @@
     scrollbar-color: $gray #40404099;
     scrollbar-width:auto;
     
-  }
+}
+.ver:last-of-type{
+    margin-left: auto;
+    color: $lavanda;
+}
