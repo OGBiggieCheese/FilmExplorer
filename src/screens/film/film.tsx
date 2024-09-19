@@ -1,5 +1,7 @@
 import './film.scss';
 import FilmDetailsFE from '../../components/filmDetails';
+import Cast from '../../components/cast';
+import { triangle } from '../../assets';
 
 function Film() {
   return (
@@ -12,7 +14,16 @@ function Film() {
         categories={['Animacion','Aventura', 'Comedia', 'Fantasia']}
         />
       <section>
-        cast
+        <div className="flex">
+          <img src={triangle} className="triangle"/>
+          <h2 className="title">Cast prinicpal</h2>
+          <h4 className="ver"> Ver más ➡</h4>
+        </div>
+
+        <Cast title='Jun Fukushima' 
+        imageUrl='https://media.themoviedb.org/t/p/w300_and_h450_bestv2/eAAExC6g6C1Dx6FsZapbWOe3Ie8.jpg
+        '
+        voice='Kazuma Satou (voice)'/>
       </section>    
     
     

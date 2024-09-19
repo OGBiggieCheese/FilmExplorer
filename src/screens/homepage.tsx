@@ -23,8 +23,8 @@ function Homepage() {
           <img src="src/assets/triangle.svg" className="triangle"/>
           <h2 className="title">Lo más popular</h2>
           <h4 className="ver"> Ver más ➡</h4>
-        
         </div>
+
         <div className="container">
            <Card title="Deadpool" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
            <Card title="Borderlands" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jtEZi4eZxDjxcDIeMbkQ8HmvRs1.jpg" />

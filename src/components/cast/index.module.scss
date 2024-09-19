@@ -1,0 +1,17 @@
+@import "../../scss/variables";
+
+.castImage{
+    width: auto;
+    height: 200px;
+    border-radius: 1.2rem;
+}
+.castTitle{
+    margin: 0px;
+    color: $whiteFE;
+    font-size: 1.2rem;
+}
+.castVoice{
+    margin-top: 0px;
+    color: $gray;
+    font-size: 0.8rem;
+}
