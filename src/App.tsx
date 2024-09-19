@@ -16,7 +16,6 @@ function App() {
             <Route path='/film/:filmID' element={<Film/>}></Route>
           </Routes>
         </BrowserRouter>
- 
       </main>
       <footer>
         

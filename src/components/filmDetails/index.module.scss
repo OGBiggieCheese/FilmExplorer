@@ -1,0 +1,109 @@
+@import "../../scss/variables";
+.film {
+  position: relative;
+  width: 100%;
+  height: 40rem; 
+  display: flex;
+  overflow: hidden;
+
+  .filmImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%); 
+    z-index: -1;
+  }
+
+  .filmContent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    z-index: 1;
+  }
+
+  .textContainer {
+    margin-top: -45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: $whiteFE;
+  }
+
+  .filmTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .filmDescription {
+    font-weight:normal;
+    font-size: 1rem;
+    margin-top: 10px;
+    opacity: 0.8;
+    margin-right: 64px;
+  }
+}
+
+  .filmPoster {
+    position: relative;
+    bottom: 24px;
+    border-radius: 16px;
+    width: 300px; 
+    height: auto;
+    margin-top: 0px;
+    z-index: 30;
+    margin-right: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  .categoryButton{
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size:small;
+    font-weight: normal;
+    margin: 4px;
+    padding-left: 20px ;
+    padding-right: 20px ;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:hover{
+        border-color: $lavanda;
+    }
+  }
+  .filmMore{
+    display: flex;
+  }
+  p{
+    margin-right: 20px;
+    color: $gray;
+  }
+  .btnAction{
+    padding: 8px 10px 8px 10px;
+    margin-right: 16px;
+    border-radius: 80%;
+    background-color: $lavanda;
+    &:hover{
+        border-color: $whiteFE;
+    }
+  }
+  .trailer{
+    background-color: $lavanda;
+    border-radius: 20px;
+  }
+  .castPrincipal{
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+  }
+  .dn{
+    margin-right: 200px;
+
+    h5{
+        margin-top: -20px;
+        color: $gray;
+    }
+  }
