@@ -69,6 +69,14 @@ function Film() {
       <div className='moreInfo'>
         <h4>Titulo original</h4>
         <p>映画 この素晴らしい世界に祝福を！紅伝説</p>
+        <h4>Estado</h4>
+        <p>Estrenada</p>
+        <h4>Idioma original</h4>
+        <p>Japonés</p>
+        <h4>Presupuesto</h4>
+        <p>20.000.000</p>
+        <h4>Ingresos</h4>
+        <p>90.000.000</p>
       </div>
     </div>
     
