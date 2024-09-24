@@ -1,12 +1,9 @@
 import './film.scss';
 import FilmDetailsFE from '../../components/filmDetails';
 import Cast from '../../components/cast';
-import { triangle } from '../../assets';
 import Slider from '../../components/slider';
 import Multimedia from '../../components/multimedia';
-import { ConfigProvider } from 'antd';
-import Space from 'antd';
-import Button from 'antd';
+import Card from '../../components/card';
 
 function Film() {
   return (
@@ -58,7 +55,14 @@ function Film() {
       </section>   
 
       <section>
-  
+        <Slider title='Recomendados'>
+           <Card title="Love, Chunibyo & Other Delusions the Movie: Take on Me!" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aJ7iLBM0JPSptBRhLuT3FQXzSEK.jpg"/>
+           <Card title="Sidonia no Kishi: Ai Tsumugu Hoshi " imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/cQx04qrOqktvCsFJCNakMSSOZTL.jpg"/>
+           <Card title="Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Movie: Orion no Ya" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/78x3RRydNXvdB8BhJAwZz42g1Q1.jpg"/>
+           <Card title="Koutetsujou no Kabaneri Movie 3: Unato Kessen" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/1O5jE1w2wYkFInDHnWYa91TemOO.jpg"/>
+           <Card title="Robot salvaje" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/oVHb8XMz1RhsopnpDEm4KRRyYT6.jpg"/>
+           <Card title="Garfield: La película" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6QR2FOCQr41gSduN70WulRIhJb7.jpg"/>
+        </Slider>
       </section>
       </div>
 
