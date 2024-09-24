@@ -1,30 +1,3 @@
 @import "../scss/variables";
 
-.title{
-    color: $whiteFE;
-    margin-left: 12px;
-}
-.triangle{
-    filter: invert(76%) sepia(52%) saturate(2703%) hue-rotate(198deg) brightness(100%) contrast(102%);
-    transform: rotateZ(90deg);
-    width: 24px;
-}
-.flex{
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-}
-.container {
-    overflow-y: hidden;
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; 
-    -webkit-overflow-scrolling: touch;
-    scrollbar-color: $gray #40404099;
-    scrollbar-width:auto;
-    
-}
-.ver:last-of-type{
-    margin-left: auto;
-    color: $lavanda;
-}
+

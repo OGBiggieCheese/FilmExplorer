@@ -3,6 +3,7 @@ import Hero from "../components/hero";
 import { Carousel } from 'antd';
 import './homepage.scss';
 import Category from "../components/categories";
+import Slider from "../components/slider";
 
 
 function Homepage() {
@@ -19,35 +20,23 @@ function Homepage() {
      </section>
 
      <section>
-        <div className="flex">
-          <img src="src/assets/triangle.svg" className="triangle"/>
-          <h2 className="title">Lo más popular</h2>
-          <h4 className="ver"> Ver más ➡</h4>
-        </div>
-
-        <div className="container">
-           <Card title="Deadpool" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
-           <Card title="Borderlands" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jtEZi4eZxDjxcDIeMbkQ8HmvRs1.jpg" />
-           <Card title="Rebel Ridge" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ymTgBQ8rCouE27oHpAUfgKEgRAj.jpg"/>
-           <Card title="Inside Out 2" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg"/>
-           <Card title="Mi villano favorito 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wTpzSDfbUuHPEgqgt5vwVtPHhrb.jpg"/>
-           <Card title="Beetlejuice 2" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kWJw7dCWHcfMLr0irTHAPIKrJ4I.jpg"/>
-           <Card title="Bad Boys: Ride or Die" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zp0Y7Nsl4UnWiwX4LxXQXgDfXSz.jpg"/>
-           <Card title="beetlejuice" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/2LanWSlqSOtyvQiIaoYz448oBSl.jpg"/>
-           <Card title="Twisters" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/50xgtaDR0xJkLSVghdTGUeMoPHP.jpg"/>
-           <Card title="Twilight of the Warriors: Walled In" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/PywbVPeIhBFc33QXktnhMaysmL.jpg"/>
-           <Card title="The Killer" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6PCnxKZZIVRanWb710pNpYVkCSw.jpg"/>
-        </div>
+        <Slider title="Lo mas popular">
+            <Card title="Deadpool" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"/>
+            <Card title="Borderlands" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jtEZi4eZxDjxcDIeMbkQ8HmvRs1.jpg" />
+            <Card title="Rebel Ridge" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ymTgBQ8rCouE27oHpAUfgKEgRAj.jpg"/>
+            <Card title="Inside Out 2" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg"/>
+            <Card title="Mi villano favorito 4" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wTpzSDfbUuHPEgqgt5vwVtPHhrb.jpg"/>
+            <Card title="Beetlejuice 2" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kWJw7dCWHcfMLr0irTHAPIKrJ4I.jpg"/>
+            <Card title="Bad Boys: Ride or Die" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zp0Y7Nsl4UnWiwX4LxXQXgDfXSz.jpg"/>
+            <Card title="beetlejuice" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/2LanWSlqSOtyvQiIaoYz448oBSl.jpg"/>
+            <Card title="Twisters" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/50xgtaDR0xJkLSVghdTGUeMoPHP.jpg"/>
+            <Card title="Twilight of the Warriors: Walled In" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/PywbVPeIhBFc33QXktnhMaysmL.jpg"/>
+            <Card title="The Killer" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6PCnxKZZIVRanWb710pNpYVkCSw.jpg"/>
+        </Slider>
      </section>
      
-
      <section>
-        <div className="flex">
-          <img src="src/assets/triangle.svg" className="triangle"/>
-          <h2 className="title">En cartelera</h2>
-          <h4 className="ver"> Ver más ➡</h4>
-        </div>
-        <div className="container">
+      <Slider title="En cartelera">
            <Card title="The Crow" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/X9iFHeIYgfqoZImvdidx8b9v4R.jpg"/>
            <Card title="Romper el círculo" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/4c3IdUFnS8qd3qrMol1b3Rq5MqF.jpg" />
            <Card title="Longlegs" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uUXRqplQ9TWmKzDkFmWN1NuPsmb.jpg"/>
@@ -59,23 +48,20 @@ function Homepage() {
            <Card title="Kinds of Kindness" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7M8gZDAQsJP3BjibSt1kZ1tBvXl.jpg"/>
            <Card title="La sustancia" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zQc1PITqFxZDbEmHlQgO5Mxc4Od.jpg"/>
            <Card title="The Forge" imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uT3xW3h0aFDRH0qBb8zNFzMHfTK.jpg"/>
-        </div>
+
+      </Slider>
+   
      </section>
      
 
      <section>
-        <div className="flex">
-          <img src="src/assets/triangle.svg" className="triangle"/>
-          <h2 className="title">Categorias</h2>
-          <h4 className="ver"> Ver más ➡</h4>
-        </div>
-        <div className="container">
-          <Category title="Acción" imageUrl="https://image.tmdb.org/t/p/original/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg" />
+      <Slider title="Categorias">
+         <Category title="Acción" imageUrl="https://image.tmdb.org/t/p/original/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg" />
           <Category title="Animación" imageUrl="https://media.themoviedb.org/t/p/w533_and_h300_bestv2/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg" />
           <Category title="Comedia" imageUrl="https://media.themoviedb.org/t/p/w533_and_h300_bestv2/1wP1phHo2CROOqzv7Azs0MT5esU.jpg" />
           <Category title="Terror" imageUrl="https://image.tmdb.org/t/p/original/Asg2UUwipAdE87MxtJy7SQo08XI.jpg" />
           <Category title="Western" imageUrl="https://image.tmdb.org/t/p/original/x4biAVdPVCghBlsVIzB6NmbghIz.jpg" />
-        </div>
+      </Slider>
      </section>
     </>
   )
