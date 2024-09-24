@@ -1,5 +1,8 @@
 @import "../../scss/variables";
 
+.cast{
+    margin-right: 16px;
+}
 .castImage{
     width: auto;
     height: 200px;
@@ -8,7 +11,7 @@
 .castTitle{
     margin: 0px;
     color: $whiteFE;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .castVoice{
     margin-top: 0px;

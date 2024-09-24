@@ -7,7 +7,7 @@
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch;
     scrollbar-color: $gray #40404099;
-    scrollbar-width:auto;
+    scrollbar-width: auto;
     
 }
 .ver:last-of-type{
@@ -23,7 +23,6 @@
     transform: rotateZ(90deg);
     width: 24px;
 }
-
 .flex{
     margin-top: 2rem;
     display: flex;
