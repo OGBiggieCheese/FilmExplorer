@@ -1,0 +1,36 @@
+@import '../../scss/variables';
+
+.imageVideo{
+    width: auto;
+    height: auto;
+}
+
+.container{
+    margin: 12px;
+    overflow-y: hidden;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: $gray #40404099;
+    scrollbar-width: auto;
+}
+
+.video{
+    margin-right: 16px;
+    width: 350px;
+    height: 250px;
+    border: 0px;
+}
+.img{
+    width: 350px;
+    height: 250px;
+    border-radius: 20px;
+    margin-right: 16px;   
+}
+.carteles{
+    width: 150px;
+    height: 250px;
+    border-radius: 20px;
+    margin-right: 16px;
+}

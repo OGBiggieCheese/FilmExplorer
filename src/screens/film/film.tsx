@@ -3,6 +3,10 @@ import FilmDetailsFE from '../../components/filmDetails';
 import Cast from '../../components/cast';
 import { triangle } from '../../assets';
 import Slider from '../../components/slider';
+import Multimedia from '../../components/multimedia';
+import { ConfigProvider } from 'antd';
+import Space from 'antd';
+import Button from 'antd';
 
 function Film() {
   return (
@@ -45,7 +49,17 @@ function Film() {
             imageUrl='https://media.themoviedb.org/t/p/w300_and_h450_bestv2/8vC4fuIORjrgFcXle4bjgDeaNhE.jpg'
             voice="Hyoizaburo (voice)"/>
         </Slider>
-      </section>    
+      </section> 
+
+      <section>
+           <Slider title='Multimedia'>
+             <Multimedia/>
+           </Slider>
+      </section>   
+
+      <section>
+  
+      </section>
       </div>
 
       <div className='moreInfo'>
