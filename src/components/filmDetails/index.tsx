@@ -1,24 +1,28 @@
-import styles from './index.module.scss';
-
+import styles from "./index.module.scss";
 
 interface filmProps {
   title: string;
-  description: string; 
-  imageUrl: string; 
+  description: string;
+  imageUrl: string;
   posterUrl: string;
   categories: string[];
 }
 
-const filmDetailsFE: React.FC<filmProps> = ({ title, description, imageUrl, posterUrl, categories}) => {
+const filmDetailsFE: React.FC<filmProps> = ({
+  title,
+  description,
+  imageUrl,
+  posterUrl,
+  categories,
+}) => {
   return (
     <div className={styles.film}>
       <img src={imageUrl} alt={title} className={styles.filmImage} />
-      
+
       <div className={styles.filmContent}>
-        <img src={posterUrl} alt={title} className={styles.filmPoster}/>
-        
+        <img src={posterUrl} alt={title} className={styles.filmPoster} />
+
         <div className={styles.textContainer}>
-         
           <h1 className={styles.filmTitle}>{title}</h1>
           <div className={styles.filmMore}>
             <p>01/01/2023</p>
@@ -43,14 +47,13 @@ const filmDetailsFE: React.FC<filmProps> = ({ title, description, imageUrl, post
 
           <div className={styles.castPrincipal}>
             <div className={styles.dn}>
-               <h4>Takaomi Kanasaki</h4>
-               <h5>Director</h5>
+              <h4>Takaomi Kanasaki</h4>
+              <h5>Director</h5>
             </div>
             <div className={styles.dn}>
               <h4>Natsume Akatsuki</h4>
               <h5>Novela</h5>
             </div>
-        
           </div>
         </div>
       </div>
