@@ -1,0 +1,51 @@
+@import "../../scss/variables";
+
+.titleCreate {
+  text-align: center;
+  margin-top: 0;
+}
+.flex {
+  display: flex;
+
+  .uploadImage {
+    min-width: 30%;
+    min-height: 500px;
+    margin-right: 5rem;
+    border-radius: 20px;
+    background-color: $whiteFE;
+    max-width: 30%;
+    text-align: center;
+    p {
+      margin-right: 0px;
+    }
+  }
+  .data {
+    width: 100%;
+    margin-right: 10rem;
+    button {
+      border-radius: 20px;
+      background-color: $lavanda;
+      &:hover {
+        border-color: $whiteFE;
+      }
+    }
+    input {
+      margin-top: 0px;
+    }
+    h5 {
+      margin-top: 0px;
+      margin-bottom: 0.8rem;
+      color: white;
+    }
+    .id {
+      width: 160px;
+    }
+    .titles {
+      display: flex;
+      gap: 2rem;
+      input {
+        width: 324px;
+      }
+    }
+  }
+}
