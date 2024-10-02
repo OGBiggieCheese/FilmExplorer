@@ -1,30 +1,34 @@
 @import "../../scss/variables";
 
 .container {
-    overflow-y: hidden;
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; 
-    -webkit-overflow-scrolling: touch;
-    scrollbar-color: $gray #40404099;
-    scrollbar-width: auto;
-    
+  overflow-y: hidden;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: $gray #40404099;
+  scrollbar-width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.ver:last-of-type{
-    margin-left: auto;
-    color: $lavanda;
+.ver:last-of-type {
+  margin-left: auto;
+  color: $lavanda;
 }
-.title{
-    color: $whiteFE;
-    margin-left: 12px;
+.title {
+  color: $whiteFE;
+  margin-left: 12px;
 }
-.triangle{
-    filter: invert(76%) sepia(52%) saturate(2703%) hue-rotate(198deg) brightness(100%) contrast(102%);
-    transform: rotateZ(90deg);
-    width: 24px;
+.triangle {
+  filter: invert(76%) sepia(52%) saturate(2703%) hue-rotate(198deg)
+    brightness(100%) contrast(102%);
+  transform: rotateZ(90deg);
+  width: 24px;
 }
-.flex{
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
+.flex {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
 }

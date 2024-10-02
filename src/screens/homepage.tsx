@@ -6,14 +6,15 @@ import Category from "../components/categories";
 import Slider from "../components/slider";
 import { movieUseCases } from "../useCases/moviesUseCases";
 import { useEffect } from "react";
-
-async function getMovies() {
-  await movieUseCases.getMovies();
-}
+import { GlobalStateService } from "../services/globalStateService";
 
 function Homepage() {
+  const now = GlobalStateService.getNow();
+  const movies = GlobalStateService.getMovies();
+
   useEffect(() => {
-    getMovies();
+    movieUseCases.getMovies();
+    movieUseCases.NowPlaying();
   }, []);
 
   return (
@@ -49,99 +50,25 @@ function Homepage() {
 
       <section>
         <Slider title="Lo mas popular">
-          <Card
-            title="Deadpool"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9TFSqghEHrlBMRR63yTx80Orxva.jpg"
-          />
-          <Card
-            title="Borderlands"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jtEZi4eZxDjxcDIeMbkQ8HmvRs1.jpg"
-          />
-          <Card
-            title="Rebel Ridge"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ymTgBQ8rCouE27oHpAUfgKEgRAj.jpg"
-          />
-          <Card
-            title="Inside Out 2"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg"
-          />
-          <Card
-            title="Mi villano favorito 4"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wTpzSDfbUuHPEgqgt5vwVtPHhrb.jpg"
-          />
-          <Card
-            title="Beetlejuice 2"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kWJw7dCWHcfMLr0irTHAPIKrJ4I.jpg"
-          />
-          <Card
-            title="Bad Boys: Ride or Die"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zp0Y7Nsl4UnWiwX4LxXQXgDfXSz.jpg"
-          />
-          <Card
-            title="beetlejuice"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/2LanWSlqSOtyvQiIaoYz448oBSl.jpg"
-          />
-          <Card
-            title="Twisters"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/50xgtaDR0xJkLSVghdTGUeMoPHP.jpg"
-          />
-          <Card
-            title="Twilight of the Warriors: Walled In"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/PywbVPeIhBFc33QXktnhMaysmL.jpg"
-          />
-          <Card
-            title="The Killer"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6PCnxKZZIVRanWb710pNpYVkCSw.jpg"
-          />
+          {movies.map((movie) => (
+            <Card
+              id={movie.id}
+              title={movie.title}
+              imageUrl={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
+            />
+          ))}
         </Slider>
       </section>
 
       <section>
         <Slider title="En cartelera">
-          <Card
-            title="The Crow"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/X9iFHeIYgfqoZImvdidx8b9v4R.jpg"
-          />
-          <Card
-            title="Romper el círculo"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/4c3IdUFnS8qd3qrMol1b3Rq5MqF.jpg"
-          />
-          <Card
-            title="Longlegs"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uUXRqplQ9TWmKzDkFmWN1NuPsmb.jpg"
-          />
-          <Card
-            title="Kill"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/j8aqIMzHnVHgS98CD6lXtspSV2S.jpg"
-          />
-          <Card
-            title="La maldición de Cenicienta"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/SFewWt1tXEqGq08oZqH1q78gzM.jpg"
-          />
-          <Card
-            title="Transformers One"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ynqqkPy8RiawjGtWFIsF9pmYZtJ.jpg"
-          />
-          <Card
-            title="Something in the Water"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mehUdQGRSbxTTOgT3zCctg5uj3F.jpg"
-          />
-          <Card
-            title="Parpadea dos veces"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/a4o3f9dmxB9TyFNMncvwspSoVLJ.jpg"
-          />
-          <Card
-            title="Kinds of Kindness"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7M8gZDAQsJP3BjibSt1kZ1tBvXl.jpg"
-          />
-          <Card
-            title="La sustancia"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zQc1PITqFxZDbEmHlQgO5Mxc4Od.jpg"
-          />
-          <Card
-            title="The Forge"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uT3xW3h0aFDRH0qBb8zNFzMHfTK.jpg"
-          />
+          {now.map((now) => (
+            <Card
+              id={now.id}
+              title={now.title}
+              imageUrl={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${now.poster_path}`}
+            />
+          ))}
         </Slider>
       </section>
 
