@@ -3,14 +3,14 @@ import axios, { AxiosError } from 'axios';
 const baseUrl = import.meta.env.VITE_API_URL;
 
 export const axiosInstance = axios.create({
-  baseURL: "/api",
-  params: {key: import.meta.env.VITE_API_KEY }
+  baseURL: baseUrl,
 });
 
 
 axiosInstance.interceptors.request.use((config) => {
   config.headers['Authorization'] = 'Bearer ' + import.meta.env.VITE_ACCESS_TOKEN; 
-  config.headers['Access-Control-Allow-Credentials'] = true;
+  config.headers['accept'] = 'application/json';
+ 
   return config;
 });
 
