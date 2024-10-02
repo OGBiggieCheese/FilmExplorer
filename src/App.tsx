@@ -6,6 +6,7 @@ import Profile from "./screens/profile/profile";
 import Create from "./screens/create/create";
 import Navbar from "./components/navbar";
 import ScrollToTop from "./components/scrollToTop";
+import Search from "antd/es/transfer/search";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               {" "}
             </Route>
             <Route path="/create" element={<Create />}></Route>
+            <Route path="/search" element={<Search />}></Route>
           </Routes>
         </main>
         <footer></footer>

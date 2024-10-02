@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: inherit;
+}
+
+
 body {
   margin: 0;
   display: flex;
