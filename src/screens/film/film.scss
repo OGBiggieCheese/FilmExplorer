@@ -1,16 +1,17 @@
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
-.moreInfo{
-    margin-left: 4rem;
-    margin-top: 2rem;
-    p{
-        margin-top: 0px;
-    }
-    h4{
-        margin-bottom: 0px;
-    }
+.moreInfo {
+  margin-left: 4rem;
+  margin-top: 2rem;
+  width: 30%;
+  p {
+    margin-top: 0px;
+  }
+  h4 {
+    margin-bottom: 0px;
+  }
 }
-.principalInfo{
-    width: 900px;
+.principalInfo {
+  width: 70%;
 }

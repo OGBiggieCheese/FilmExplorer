@@ -2,10 +2,14 @@ import styles from "./index.module.scss";
 
 interface filmProps {
   title: string;
+  originalTitle: string;
   description: string;
   imageUrl: string;
   posterUrl: string;
   categories: string[];
+  releaseDate: string;
+  rated: number;
+  importantPerson: string;
 }
 
 const filmDetailsFE: React.FC<filmProps> = ({
@@ -14,6 +18,8 @@ const filmDetailsFE: React.FC<filmProps> = ({
   imageUrl,
   posterUrl,
   categories,
+  releaseDate,
+  rated,
 }) => {
   return (
     <div className={styles.film}>
@@ -25,9 +31,9 @@ const filmDetailsFE: React.FC<filmProps> = ({
         <div className={styles.textContainer}>
           <h1 className={styles.filmTitle}>{title}</h1>
           <div className={styles.filmMore}>
-            <p>01/01/2023</p>
+            <p>{releaseDate}</p>
             <p>1hr 40min</p>
-            <p>8.9/10 ★</p>
+            <p>{rated}/10 ★</p>
           </div>
           <div className={styles.categories}>
             {categories.map((category, index) => (
