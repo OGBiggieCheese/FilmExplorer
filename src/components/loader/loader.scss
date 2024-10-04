@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+
+.spin {
+  width: 97vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  overflow-x: hidden;
+
+  h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: $whiteFE;
+
+    @keyframes dots {
+      0% {
+        content: "Cargando contenido";
+      }
+      25% {
+        content: "Cargando contenido.";
+      }
+      50% {
+        content: "Cargando contenido..";
+      }
+      75% {
+        content: "Cargando contenido...";
+      }
+      100% {
+        content: "Cargando contenido.";
+      }
+    }
+
+    &::after {
+      content: "Cargando contenido...";
+      display: inline-block;
+      animation: dots 2s infinite steps(4);
+    }
+  }
+}
