@@ -5,22 +5,34 @@ import Slider from "../../components/slider";
 import Multimedia from "../../components/multimedia";
 import Card from "../../components/card";
 import { movieUseCases } from "../../useCases/moviesUseCases";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GlobalStateService } from "../../services/globalStateService";
+import Loader from "../../components/loader/loader";
 
 function Film() {
   const { filmID } = useParams<{ filmID: string }>();
+  const [loading, setLoading] = useState(true);
+
   const recommendations = GlobalStateService.getRecommendations();
   const credits = GlobalStateService.getCredits();
   const filmDetails = GlobalStateService.getFilmDetails();
 
   useEffect(() => {
-    movieUseCases.filmDetails(Number(filmID));
-    movieUseCases.getMovieCredits(Number(filmID));
-    movieUseCases.getMovieRecommendations(Number(filmID));
+    const fetchData = async () => {
+      setLoading(true);
+      await movieUseCases.filmDetails(Number(filmID));
+      await movieUseCases.getMovieCredits(Number(filmID));
+      await movieUseCases.getMovieRecommendations(Number(filmID));
+      setLoading(false);
+    };
+
+    fetchData();
   }, [filmID]);
 
+  if (loading) {
+    return <Loader></Loader>;
+  }
   if (!filmDetails) return <div>Nada que ver aca</div>;
 
   return (
