@@ -6,7 +6,7 @@ import Profile from "./screens/profile/profile";
 import Create from "./screens/create/create";
 import Navbar from "./components/navbar";
 import ScrollToTop from "./components/scrollToTop";
-import Search from "antd/es/transfer/search";
+import Search from "./screens/search/search";
 
 function App() {
   return (

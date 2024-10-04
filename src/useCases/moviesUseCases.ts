@@ -26,8 +26,7 @@ async function filmDetails(movie_id: number) {
         const videosResponse = await APIService.getFilmVideos(movie_id);
         const imagesResponse = await APIService.getFilmImages(movie_id);
         const response = await APIService.getMovieDetails(movie_id);
-        
-        // Extract relevant details for FilmDetailsFE
+
         const filmData = {
             title: response.title,
             originalTitle: response.original_title,
@@ -60,7 +59,7 @@ async function filmDetails(movie_id: number) {
         return GlobalStateService.setFilmDetails(filmData);
     } catch (error) {
         console.log(error);
-        return null; // Return null in case of error
+        return null;
     }
 }
 
@@ -76,7 +75,8 @@ async function getMovieRecommendations(movie_id: number){
 
 async function getSearchFilm(query: string) {
     const response= await APIService.getSearchFilm(query)
-    return response.results
+    console.log(response)
+    GlobalStateService.setSearch(response.results)
 }
 
 export const movieUseCases = {
