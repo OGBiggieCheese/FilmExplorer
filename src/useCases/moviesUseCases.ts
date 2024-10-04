@@ -21,7 +21,7 @@ async function NowPlaying(){
 
 
 /* Film */
-async function FilmDetails(movie_id: number) {
+async function filmDetails(movie_id: number) {
     try {
         const videosResponse = await APIService.getFilmVideos(movie_id);
         const imagesResponse = await APIService.getFilmImages(movie_id);
@@ -82,7 +82,7 @@ async function getSearchFilm(query: string) {
 export const movieUseCases = {
     getMovies,
     NowPlaying,
-    FilmDetails,
+    filmDetails,
     getMovieCredits,
     getMovieRecommendations,
     getSearchFilm

@@ -68,7 +68,7 @@ async function getFilmImages(movie_id: number){
   }
 async function getSearchFilm(query: string){
     try {
-        const { data } = await axiosInstance.get(`/movie?query=${query}&include_adult=true&language=es-ES&page=1`);
+        const { data } = await axiosInstance.get(`/search/movie?query=${query}&include_adult=true&language=es-ES&page=1`);
         return data; 
     } catch (error) {
         console.log(error); 

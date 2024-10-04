@@ -6,6 +6,7 @@ interface IGlobalState{
     film:any
     credits:any[]
     recommendations:any[]
+    search:any[]
 }
 
 const initialStoreData: IGlobalState = {
@@ -13,7 +14,8 @@ const initialStoreData: IGlobalState = {
     now:[],
     film: null,
     credits:[],
-    recommendations:[]
+    recommendations:[],
+    search:[]
 }
 
 const globalState = create(() => initialStoreData);
@@ -59,7 +61,6 @@ function setFilmDetails(film: any){
         }
     } )
 }
-
 function getCredits(){
     return globalState((state) => state.credits)
 }
@@ -71,7 +72,6 @@ function setCredits(credits: any[]){
         }
     })
 }
-
 function getRecommendations(){
     return globalState((state) => state.recommendations)
 }
@@ -80,6 +80,17 @@ function setRecommendations(recommendations: any[]){
         return{
             ...prev,
             recommendations
+        }
+    })
+}
+function getSearch(){
+    return globalState((state) => state.search)
+}
+function setSearch(search: any[]){
+    globalState.setState((prev) => {
+        return{
+            ...prev,
+            search
         }
     })
 }
@@ -104,6 +115,8 @@ export const GlobalStateService = {
     getCredits,
     setCredits,
     getRecommendations,
-    setRecommendations
+    setRecommendations,
+    getSearch,
+    setSearch
 
 }
