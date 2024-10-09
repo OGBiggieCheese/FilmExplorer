@@ -2,14 +2,9 @@ import { Tabs } from "antd";
 import type { TabsProps } from "antd";
 import styles from "./index.module.scss";
 import { ConfigProvider } from "antd";
+import { IMedia } from "../../types";
 
-interface MultimediaProps {
-  videos: Array<{ key: string; src: string }>;
-  images: Array<{ key: string; src: string }>;
-  posters: Array<{ key: string; src: string }>;
-}
-
-const Multimedia = ({ videos, images, posters }: MultimediaProps) => {
+const Multimedia = ({ videos, images, posters }: IMedia) => {
   const onChange = (key: string) => {
     console.log(key);
   };

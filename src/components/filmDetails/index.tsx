@@ -1,26 +1,69 @@
+import {
+  HeartOutlined,
+  StarOutlined,
+  UnorderedListOutlined,
+  HeartFilled,
+} from "@ant-design/icons";
 import styles from "./index.module.scss";
+import { useEffect, useState } from "react";
+import { JSONMovieUseCases } from "../../useCases/JSONMoviesUseCases";
+import { message } from "antd";
+import { IFilm } from "../../types";
 
-interface filmProps {
+interface Film {
+  id: string;
   title: string;
-  originalTitle: string;
-  description: string;
-  imageUrl: string;
   posterUrl: string;
-  categories: string[];
-  releaseDate: string;
-  rated: number;
-  importantPerson: string;
 }
 
-const filmDetailsFE: React.FC<filmProps> = ({
+const filmDetailsFE: React.FC<IFilm> = ({
   title,
   description,
   imageUrl,
   posterUrl,
-  categories,
+  genres,
   releaseDate,
   rated,
+  id,
 }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const handleAddToFavorites = () => {
+    const favouriteFilm: Film = {
+      id: id,
+      title: title,
+      posterUrl: posterUrl,
+    };
+
+    if (isFavorite) {
+      JSONMovieUseCases.deleteFavouriteFilm(id);
+      messageApi.open({
+        type: "error",
+        content: "Eliminada de favoritos",
+        duration: 2,
+      });
+      setIsFavorite(false);
+    } else {
+      messageApi.open({
+        type: "success",
+        content: "Añadida a favoritos",
+        duration: 2,
+      });
+      JSONMovieUseCases.addFavouriteFilm(favouriteFilm);
+      setIsFavorite(true);
+    }
+  };
+  useEffect(() => {
+    const checkFavorites = async () => {
+      const favorites = await JSONMovieUseCases.getFavourites();
+      const favoriteFilmExists = favorites.some((film: Film) => film.id === id);
+      setIsFavorite(favoriteFilmExists);
+    };
+
+    checkFavorites();
+  }, [id]);
+
   return (
     <div className={styles.film}>
       <img src={imageUrl} alt={title} className={styles.filmImage} />
@@ -36,7 +79,7 @@ const filmDetailsFE: React.FC<filmProps> = ({
             <p>{rated}/10 ★</p>
           </div>
           <div className={styles.categories}>
-            {categories.map((category, index) => (
+            {genres.map((category, index) => (
               <button key={index} className={styles.categoryButton}>
                 {category}
               </button>
@@ -45,9 +88,16 @@ const filmDetailsFE: React.FC<filmProps> = ({
           <h2 className={styles.filmDescription}>{description}</h2>
 
           <div>
-            <button className={styles.btnAction}>👁</button>
-            <button className={styles.btnAction}>♥</button>
-            <button className={styles.btnAction}>🕑</button>
+            <button className={styles.btnAction}>
+              <StarOutlined />
+            </button>
+            {contextHolder}
+            <button className={styles.btnAction} onClick={handleAddToFavorites}>
+              {isFavorite ? <HeartFilled /> : <HeartOutlined />}
+            </button>
+            <button className={styles.btnAction}>
+              <UnorderedListOutlined />
+            </button>
             <button className={styles.trailer}>Ver trailer ➡</button>
           </div>
 

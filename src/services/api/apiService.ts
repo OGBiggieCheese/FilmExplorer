@@ -23,7 +23,10 @@ async function NowPlaying(){
 async function getMovieDetails(movie_id: number) {
     try {
         const { data } = await axiosInstance.get(`/movie/${movie_id}?language=es-ES`);
+        console.log(data.genres)
+        console.log(data)
         return data; 
+        
     } catch (error) {
         console.log(error); 
         return error; 
@@ -84,5 +87,5 @@ export const APIService = {
     getMovieRecommendations,
     getFilmVideos,
     getFilmImages,
-    getSearchFilm
+    getSearchFilm,
 };

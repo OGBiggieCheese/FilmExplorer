@@ -1,15 +1,10 @@
+import { ICast } from "../../types";
 import styles from "./index.module.scss";
-
-interface CastProps {
-  title: string;
-  imageUrl: string;
-  voice: string;
-}
 
 const defaultImage =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxcl2IVxUUIcyn9ogSGu64jBOOeiuotXAMXA&s";
 
-const Cast: React.FC<CastProps> = ({ title, imageUrl, voice }) => {
+const Cast: React.FC<ICast> = ({ title, imageUrl, voice }) => {
   const validImageUrl =
     imageUrl && !imageUrl.endsWith("null") ? imageUrl : defaultImage;
   return (

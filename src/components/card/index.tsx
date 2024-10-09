@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "./index.module.scss";
+import { ICard } from "../../types";
 
-interface CardProps {
-  id: number;
-  title: string;
-  imageUrl: string;
-}
 const defaultImage =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo6yxIZRkMjjGozYJIXfFO99wPZa4K8cXh4Q&s";
-const Card: React.FC<CardProps> = ({ id, title, imageUrl }) => {
+const Card: React.FC<ICard> = ({ id, title, imageUrl }) => {
   const validImageUrl =
     imageUrl && !imageUrl.endsWith("null") ? imageUrl : defaultImage;
   return (

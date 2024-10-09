@@ -1,5 +1,6 @@
 import { APIService} from "../services/api/apiService"
 import { GlobalStateService } from "../services/globalStateService"
+import { IFilm } from "../types"
 
 /* Homepage */
 async function getMovies(){
@@ -27,20 +28,22 @@ async function filmDetails(movie_id: number) {
         const imagesResponse = await APIService.getFilmImages(movie_id);
         const response = await APIService.getMovieDetails(movie_id);
 
-        const filmData = {
+        const filmData: IFilm = {
+            id: response.id,
             title: response.title,
             originalTitle: response.original_title,
             description: response.overview,
             imageUrl: `https://image.tmdb.org/t/p/original${response.backdrop_path}`,
             posterUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2${response.poster_path}`,
-            categories: response.genres.map((genre: { name: string }) => genre.name),
+            genres: response.genres.map((genre: { name: string }) => genre.name),
             releaseDate: response.release_date,
             rated: response.vote_average,
             status: response.status,
+            budget: response.budget,
+            source: "api",
             spokenLanguages: response.spoken_languages.map(
               (lang: { english_name: string }) => lang.english_name
             ),
-            budget: response.budget,
             videos: videosResponse.results.map((video: { key: string }) => ({
               key: video.key,
               src: video.key,
@@ -53,9 +56,9 @@ async function filmDetails(movie_id: number) {
               key: poster.file_path,
               src: `https://image.tmdb.org/t/p/w220_and_h330_bestv2${poster.file_path}`,
             })),
+            
 
         };
-
         return GlobalStateService.setFilmDetails(filmData);
     } catch (error) {
         console.log(error);
@@ -85,7 +88,7 @@ export const movieUseCases = {
     filmDetails,
     getMovieCredits,
     getMovieRecommendations,
-    getSearchFilm
+    getSearchFilm,
 
 } 
 

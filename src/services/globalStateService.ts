@@ -1,4 +1,5 @@
 import create from 'zustand';
+import { ICard, IFilm } from '../types';
 
 interface IGlobalState{
     movies:any[];
@@ -7,6 +8,7 @@ interface IGlobalState{
     credits:any[]
     recommendations:any[]
     search:any[]
+    favourites: any[]
 }
 
 const initialStoreData: IGlobalState = {
@@ -15,7 +17,8 @@ const initialStoreData: IGlobalState = {
     film: null,
     credits:[],
     recommendations:[],
-    search:[]
+    search:[],
+    favourites:[],
 }
 
 const globalState = create(() => initialStoreData);
@@ -32,7 +35,7 @@ function getNow(){
     return globalState.getState().movies
 }
  */
-function setMovies(movies: any[]){
+function setMovies(movies: ICard[]){
     globalState.setState((prev) => {
         return {
             ...prev,
@@ -40,7 +43,7 @@ function setMovies(movies: any[]){
         }
     } )
 }
-function setNow(now: any[]){
+function setNow(now: ICard[]){
     globalState.setState((prev) => {
         return {
             ...prev,
@@ -53,7 +56,7 @@ function setNow(now: any[]){
 function getFilmDetails(){
    return globalState((state) => state.film)
 }
-function setFilmDetails(film: any){
+function setFilmDetails(film: IFilm){
     globalState.setState((prev) => {
         return {
             ...prev,
@@ -95,8 +98,17 @@ function setSearch(search: any[]){
     })
 }
 
-
-
+function getFavourites(){
+    return globalState((state) => state.favourites)
+}
+function setFavourites(favourites: any[]){
+    globalState.setState((prev) => {
+        return {
+            ...prev,
+            favourites
+        }
+    } )
+}
 
 
 
@@ -117,6 +129,8 @@ export const GlobalStateService = {
     getRecommendations,
     setRecommendations,
     getSearch,
-    setSearch
+    setSearch,
+    getFavourites,
+    setFavourites,
 
 }
