@@ -2,8 +2,18 @@ import "./profile.scss";
 import Slider from "../../components/slider";
 import Card from "../../components/card";
 import List from "../../components/list";
+import { useEffect } from "react";
+import { movieUseCases } from "../../useCases/moviesUseCases";
+import { GlobalStateService } from "../../services/globalStateService";
+import { JSONMovieUseCases } from "../../useCases/JSONMoviesUseCases";
 
 function Profile() {
+  const favourites = GlobalStateService.getFavourites();
+
+  useEffect(() => {
+    JSONMovieUseCases.getFavourites();
+  }, []);
+
   return (
     <>
       <section className="welcome">
@@ -18,31 +28,13 @@ function Profile() {
       </section>
       <section>
         <Slider title="Favoritos">
-          <Card
-            id={2}
-            title="Love, Chunibyo & Other Delusions the Movie: Take on Me!"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aJ7iLBM0JPSptBRhLuT3FQXzSEK.jpg"
-          />
-          <Card
-            id={2}
-            title="Sidonia no Kishi: Ai Tsumugu Hoshi "
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/cQx04qrOqktvCsFJCNakMSSOZTL.jpg"
-          />
-          <Card
-            id={2}
-            title="Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Movie: Orion no Ya"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/78x3RRydNXvdB8BhJAwZz42g1Q1.jpg"
-          />
-          <Card
-            id={2}
-            title="Koutetsujou no Kabaneri Movie 3: Unato Kessen"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/1O5jE1w2wYkFInDHnWYa91TemOO.jpg"
-          />
-          <Card
-            id={2}
-            title="Robot salvaje"
-            imageUrl="https://image.tmdb.org/t/p/w600_and_h900_bestv2/oVHb8XMz1RhsopnpDEm4KRRyYT6.jpg"
-          />
+          {favourites.map((movie) => (
+            <Card
+              id={movie.id}
+              title={movie.title}
+              imageUrl={movie.posterUrl}
+            />
+          ))}
         </Slider>
       </section>
       <section>
