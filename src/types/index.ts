@@ -6,6 +6,10 @@ export interface IMedia{
     videos: Array<{ key: string; src: string }>;
     images: Array<{ key: string; src: string }>;
     posters: Array<{ key: string; src: string }>;
+} 
+export interface IGenre{
+    id: string,
+    name: string, 
 }
 
 export interface IFilm{
@@ -14,12 +18,13 @@ export interface IFilm{
     description: string,
     imageUrl: string,
     posterUrl: string,
-    genres: string[],
+    genres: IGenre[],
     releaseDate: string,
-    rated: string,
+    rated: number,
     status: string,
     spokenLanguages: ISpokenLanguages[],
     budget: number,
+    revenue: number,
     videos: IMedia[],
     images: IMedia[],
     posters: IMedia[],
@@ -37,4 +42,9 @@ export interface ICard{
     id: number;
     title: string;
     imageUrl: string;
+    source: "api" | "database",
+}
+
+export interface IFilmForm extends Omit<IFilm, "id">{
+    id: string;
 }
