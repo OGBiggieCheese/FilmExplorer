@@ -1,7 +1,7 @@
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
 import styles from "./index.module.scss";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, Image } from "antd";
 import { IMedia } from "../../types";
 
 const Multimedia = ({ videos, images, posters }: IMedia) => {
@@ -30,14 +30,22 @@ const Multimedia = ({ videos, images, posters }: IMedia) => {
       label: "Imágenes",
       children: (
         <div className={styles.container}>
-          {images.map((image) => (
-            <img
-              key={image.key}
-              className={styles.img}
-              src={image.src}
-              alt="Imagen de la película"
-            />
-          ))}
+          <Image.PreviewGroup
+            preview={{
+              onChange: (current, prev) =>
+                console.log(`current index: ${current}, prev index: ${prev}`),
+            }}
+          >
+            {images.map((image) => (
+              <Image
+                rootClassName={styles.img}
+                key={image.key}
+                className={styles.img}
+                src={image.src}
+                alt="Imagen de la película"
+              />
+            ))}
+          </Image.PreviewGroup>
         </div>
       ),
     },
@@ -46,14 +54,21 @@ const Multimedia = ({ videos, images, posters }: IMedia) => {
       label: "Carteles",
       children: (
         <div className={styles.container}>
-          {posters.map((poster) => (
-            <img
-              key={poster.key}
-              className={styles.carteles}
-              src={poster.src}
-              alt="Póster de la película"
-            />
-          ))}
+          <Image.PreviewGroup
+            preview={{
+              onChange: (current, prev) =>
+                console.log(`current index: ${current}, prev index: ${prev}`),
+            }}
+          >
+            {posters.map((poster) => (
+              <Image
+                key={poster.key}
+                rootClassName={styles.carteles}
+                src={poster.src}
+                alt="Póster de la película"
+              />
+            ))}
+          </Image.PreviewGroup>
         </div>
       ),
     },

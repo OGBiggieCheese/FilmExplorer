@@ -2,7 +2,7 @@
 .film {
   position: relative;
   width: 100%;
-  height: 40rem; 
+  height: 40rem;
   display: flex;
   overflow: hidden;
 
@@ -13,7 +13,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%); 
+    filter: brightness(50%);
     z-index: -1;
   }
 
@@ -40,7 +40,7 @@
   }
 
   .filmDescription {
-    font-weight:normal;
+    font-weight: normal;
     font-size: 1rem;
     margin-top: 10px;
     opacity: 0.8;
@@ -48,62 +48,90 @@
   }
 }
 
-  .filmPoster {
-    position: relative;
-    bottom: 24px;
-    border-radius: 16px;
-    width: 300px; 
-    height: auto;
-    margin-top: 0px;
-    z-index: 30;
-    margin-right: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  .categoryButton{
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size:small;
-    font-weight: normal;
-    margin: 4px;
-    padding-left: 20px ;
-    padding-right: 20px ;
-    padding-top: 8px;
-    padding-bottom: 8px;
+.filmPoster {
+  position: relative;
+  bottom: 24px;
+  border-radius: 16px;
+  min-width: 300px;
+  max-width: 300px;
+  height: auto;
+  margin-top: 0px;
+  z-index: 30;
+  margin-right: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.categoryButton {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: small;
+  font-weight: normal;
+  margin: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
-    &:hover{
-        border-color: $lavanda;
-    }
+  &:hover {
+    border-color: $lavanda;
   }
-  .filmMore{
-    display: flex;
+}
+.filmMore {
+  display: flex;
+}
+p {
+  margin-right: 20px;
+  color: $gray;
+}
+.btnAction {
+  padding: 8px 10px 8px 10px;
+  margin-right: 16px;
+  border-radius: 80%;
+  background-color: $lavanda;
+  &:hover {
+    border-color: $whiteFE;
   }
-  p{
-    margin-right: 20px;
+}
+.rating {
+  background-color: $lavanda;
+  border-radius: 20px;
+  margin-right: 16px;
+}
+.trailer {
+  background-color: $lavanda;
+  border-radius: 20px;
+}
+.castPrincipal {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+}
+.dn {
+  margin-right: 200px;
+
+  h5 {
+    margin-top: -20px;
     color: $gray;
   }
-  .btnAction{
-    padding: 8px 10px 8px 10px;
-    margin-right: 16px;
-    border-radius: 80%;
-    background-color: $lavanda;
-    &:hover{
-        border-color: $whiteFE;
-    }
-  }
-  .trailer{
-    background-color: $lavanda;
-    border-radius: 20px;
-  }
-  .castPrincipal{
-    display: flex;
-    flex-direction: row;
-    margin-top: 60px;
-  }
-  .dn{
-    margin-right: 200px;
-
-    h5{
-        margin-top: -20px;
-        color: $gray;
-    }
-  }
+}
+.flex {
+  display: flex;
+}
+.btnEdit {
+  margin-left: 10px;
+  color: $lavanda;
+  padding: 8px 13px 8px 13px;
+}
+.listTitle {
+  margin-top: 10px;
+  color: $lavanda;
+}
+.btnModal {
+  margin-top: 10px;
+  background-color: $lavanda;
+}
+.btnAddList {
+  margin-top: 10px;
+  background-color: rgb(48, 48, 48);
+  border-radius: 20px;
+  width: 100%;
+}
