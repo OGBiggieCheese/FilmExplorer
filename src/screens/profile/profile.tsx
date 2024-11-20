@@ -3,15 +3,20 @@ import Slider from "../../components/slider";
 import Card from "../../components/card";
 import List from "../../components/list";
 import { useEffect } from "react";
-import { movieUseCases } from "../../useCases/moviesUseCases";
 import { GlobalStateService } from "../../services/globalStateService";
 import { JSONMovieUseCases } from "../../useCases/JSONMoviesUseCases";
 
 function Profile() {
   const favourites = GlobalStateService.getFavourites();
+  const lists = GlobalStateService.getLists();
 
   useEffect(() => {
     JSONMovieUseCases.getFavourites();
+    const fetchLists = async () => {
+      const fetchedLists = await JSONMovieUseCases.getLists();
+      GlobalStateService.setLists(fetchedLists);
+    };
+    fetchLists();
   }, []);
 
   return (
@@ -30,18 +35,25 @@ function Profile() {
         <Slider title="Favoritos">
           {favourites.map((movie) => (
             <Card
+              key={movie.id}
               id={movie.id}
               title={movie.title}
-              imageUrl={movie.posterUrl}
+              poster_path={movie.poster_path}
+              source={movie.source}
             />
           ))}
         </Slider>
       </section>
       <section>
         <Slider title="Listas">
-          <List title="Las que mas me gustaron en 2024"></List>
-          <List title="Las que menos me gustaron en 2024"></List>
-          <List title="anmsdijfkmnasijdm"></List>
+          {lists.map((list) => (
+            <List
+              key={list.id}
+              id={list.id}
+              title={list.name}
+              movies={list.movies}
+            />
+          ))}
         </Slider>
       </section>
     </>

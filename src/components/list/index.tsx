@@ -1,21 +1,30 @@
-import React, { ReactNode } from 'react';
-import styles from './index.module.scss';
+import { Link } from "react-router-dom";
+import styles from "./index.module.scss";
 
-interface lProps{
-    title: string;
+interface lProps {
+  title: string;
+  id: string;
+  movies: any[];
 }
 
-export default function List({title}:lProps) {
+export default function List({ title, id, movies }: lProps) {
   return (
     <>
+      <Link to={`/list/${id}`}>
         <div className={styles.list}>
           <div>
-              <img className={styles.moviesInList} src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aaAySq2nI9kYQZzom7ymvoN2Kh.jpg" alt="" />
-              <img className={styles.moviesInList} src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/xLal6fXNtiJN6Zw6qk21xAtdOeN.jpg" alt="" />
-              <img className={styles.moviesInList} src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qu05lw4qUC3bX1VMErn1s0Byw4W.jpg" alt="" />
+            {movies.slice(0, 3).map((movie) => (
+              <img
+                key={movie.id}
+                className={styles.moviesInList}
+                src={movie.poster_path}
+                alt={movie.title}
+              />
+            ))}
           </div>
           <h5 className={styles.title}>{title}</h5>
         </div>
+      </Link>
     </>
-  )
+  );
 }
