@@ -1,62 +1,36 @@
 import { InboxOutlined } from "@ant-design/icons";
-import type { UploadProps } from "antd";
-import { Form, Input, message, Upload, Select, Space, DatePicker } from "antd";
+import type { SelectProps } from "antd";
+import {
+  Form,
+  Input,
+  message,
+  Upload,
+  Select,
+  DatePicker,
+  InputNumber,
+} from "antd";
 import "./create.scss";
 import { useFormik } from "formik";
 import { JSONMovieUseCases } from "../../useCases/JSONMoviesUseCases";
-import { IFilm } from "../../types";
+import { IFilmForm } from "../../types";
+import { GlobalStateService } from "../../services/globalStateService";
+import { useEffect } from "react";
+import { movieUseCases } from "../../useCases/moviesUseCases";
+import dayjs from "dayjs";
+import { useNavigate } from "react-router-dom";
 const { Dragger } = Upload;
 
-const props: UploadProps = {
-  style: { borderRadius: "20px" },
-  name: "file",
-  multiple: false,
-  action: "https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload",
-  onChange(info) {
-    const { status } = info.file;
-    if (status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (status === "done") {
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === "error") {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-  onDrop(e) {
-    console.log("Dropped files", e.dataTransfer.files);
-  },
-};
-
-const options = [
-  {
-    label: "Aventura",
-    value: "aventura",
-    emoji: "🤠",
-    desc: "Aventura",
-  },
-  {
-    label: "Animacion",
-    value: "animacion",
-    emoji: "👦",
-    desc: "Animacion",
-  },
-  {
-    label: "Comedia",
-    value: "comedia",
-    emoji: "🤣",
-    desc: "Comedia",
-  },
-  {
-    label: "Terror",
-    value: "terror",
-    emoji: "😱",
-    desc: "Terror",
-  },
-];
-
 export default function Create() {
-  const formik = useFormik<IFilm>({
+  const genres = GlobalStateService.getGenres();
+
+  useEffect(() => {
+    movieUseCases.getGenres();
+  }, []);
+
+  const [messageApi, contextHolder] = message.useMessage();
+  const navigate = useNavigate();
+
+  const formik = useFormik<IFilmForm>({
     initialValues: {
       id: "",
       title: "",
@@ -65,32 +39,72 @@ export default function Create() {
       description: "",
       genres: [],
       releaseDate: "",
-      rated: "",
+      rated: 0,
       posterUrl: "",
       status: "Lanzado",
       spokenLanguages: [],
       budget: 0,
+      revenue: 0,
       videos: [],
       images: [],
       posters: [],
+      runtime: 0,
       source: "database",
     },
     onSubmit: (values) => {
-      console.log(values);
-      alert(JSON.stringify(values, null, 2));
+      values.releaseDate = dayjs(values.releaseDate).format("YYYY-MM-DD");
+      JSONMovieUseCases.createFilm(values).then((createdFilm) => {
+        if (createdFilm) {
+          messageApi.open({
+            type: "success",
+            content: `Pelicula ${createdFilm.title} creada`,
+            duration: 2,
+          });
+          setTimeout(() => {
+            navigate(`/film/database/${createdFilm.id}`);
+          }, 2000);
+        }
+      });
     },
   });
 
-  async function handleSubmit() {
-    JSONMovieUseCases.createFilm(formik.values);
-  }
+  const handleUploadChange = (info: any, fieldName: any) => {
+    const { status } = info.file;
+    if (status === "done") {
+      const url = info.file.response.url;
+      formik.setFieldValue(fieldName, url);
+      message.success(`${info.file.name} file uploaded successfully.`);
+    } else if (status === "error") {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  };
+
+  const uploadProps = (fieldName: any) => ({
+    style: { borderRadius: "20px" },
+    name: "file",
+    multiple: false,
+    action: `https://api.cloudinary.com/v1_1/${
+      import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+    }/image/upload`,
+    data: {
+      upload_preset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET,
+    },
+    onChange: (info: any) => handleUploadChange(info, fieldName),
+    onDrop: (e: any) => console.log("Dropped files", e.dataTransfer.files),
+  });
+
+  const options: SelectProps["options"] = genres.map((g) => ({
+    label: g.name,
+    value: g.id,
+  }));
+
   return (
     <>
       <h2 className="titleCreate">Crear nueva pelicula</h2>
-      <Form onFinish={handleSubmit}>
+      <Form onFinish={formik.handleSubmit}>
         <div className="flex">
           <div className="uploadImage">
-            <Dragger {...props}>
+            <Dragger className="poster" {...uploadProps("posterUrl")}>
               <p className="ant-upload-drag-icon">
                 <InboxOutlined />
               </p>
@@ -99,6 +113,17 @@ export default function Create() {
               </p>
               <p className="ant-upload-hint">
                 Esta imagen sera utilizada como el poster de tu pelicula
+              </p>
+            </Dragger>
+            <Dragger className="background" {...uploadProps("imageUrl")}>
+              <p className="ant-upload-drag-icon">
+                <InboxOutlined />
+              </p>
+              <p className="ant-upload-text">
+                Clickea o arrastra la imagen a esta area para subirla
+              </p>
+              <p className="ant-upload-hint">
+                Esta imagen sera utilizada como el background de tu pelicula
               </p>
             </Dragger>
           </div>
@@ -114,10 +139,9 @@ export default function Create() {
                 <Input
                   name="title"
                   value={formik.values.title}
-                  onChange={(e) => {
-                    formik.setFieldValue("title", e.target.value);
-                    console.log(e.target.value);
-                  }}
+                  onChange={(e) =>
+                    formik.setFieldValue("title", e.target.value)
+                  }
                 />
               </Form.Item>
 
@@ -126,10 +150,9 @@ export default function Create() {
                 <Input
                   name="originalTitle"
                   value={formik.values.originalTitle}
-                  onChange={(e) => {
-                    formik.setFieldValue("originalTitle", e.target.value);
-                    console.log(e.target.value);
-                  }}
+                  onChange={(e) =>
+                    formik.setFieldValue("originalTitle", e.target.value)
+                  }
                 />
               </Form.Item>
             </div>
@@ -140,58 +163,54 @@ export default function Create() {
                 maxLength={300}
                 size="large"
                 value={formik.values.description}
-                onChange={(e) => {
-                  formik.setFieldValue("description", e.target.value);
-                  console.log(e.target.value);
-                }}
+                onChange={(e) =>
+                  formik.setFieldValue("description", e.target.value)
+                }
               />
             </Form.Item>
             <Form.Item name="genres">
               <h5>Categorias</h5>
               <Select
                 mode="multiple"
+                optionFilterProp="label"
+                allowClear
                 style={{ width: "100%" }}
                 placeholder="Selecciona una o más categorias"
                 value={formik.values.genres}
-                onChange={(value) => {
-                  formik.setFieldValue("genres", value);
-                  console.log(value);
-                }}
+                onChange={(value) => formik.setFieldValue("genres", value)}
                 options={options}
-                optionRender={(option) => (
-                  <Space>
-                    <span role="img" aria-label={option.data.label}>
-                      {option.data.emoji}
-                    </span>
-                    {option.data.desc}
-                  </Space>
-                )}
+                optionRender={(option) => <div>{option.label}</div>}
               />
             </Form.Item>
             <div className="flex">
               <Form.Item>
                 <h5>Calificacion</h5>
-                <Input
+                <InputNumber
                   className="id"
                   value={formik.values.rated}
-                  onChange={(e) => {
-                    formik.setFieldValue("rated", e.target.value);
-                    console.log(e.target.value);
-                  }}
+                  min={1}
+                  max={10}
+                  defaultValue={0}
+                  onChange={(value) => formik.setFieldValue("rated", value)}
                 />
               </Form.Item>
 
               <Form.Item>
                 <h5>Fecha de salida</h5>
                 <DatePicker
-                  value={formik.values.releaseDate}
-                  onChange={(value) => {
-                    formik.setFieldValue("releaseDate", value);
-                    console.log(value);
-                  }}
+                  format="YYYY-MM-DD"
+                  value={
+                    formik.values.releaseDate
+                      ? dayjs(formik.values.releaseDate)
+                      : null
+                  }
+                  onChange={(dateString) =>
+                    formik.setFieldValue("releaseDate", dateString)
+                  }
                 />
               </Form.Item>
             </div>
+            {contextHolder}
             <button type="submit">Publicar</button>
           </div>
         </div>

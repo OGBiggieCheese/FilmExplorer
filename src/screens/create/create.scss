@@ -6,7 +6,16 @@
 }
 .flex {
   display: flex;
-
+  .ant-upload-drag-container {
+    height: 100px !important;
+    p {
+      color: $whiteFE !important;
+    }
+  }
+  .ant-upload-drag {
+    height: auto !important;
+    margin-top: 30px !important;
+  }
   .uploadImage {
     min-width: 30%;
     min-height: 500px;
@@ -39,6 +48,7 @@
     }
     .id {
       width: 160px;
+      margin-right: 2rem;
     }
     .titles {
       display: flex;
@@ -48,4 +58,7 @@
       }
     }
   }
+}
+.poster {
+  height: auto;
 }
