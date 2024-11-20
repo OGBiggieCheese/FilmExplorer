@@ -2,8 +2,6 @@ import { axiosInstance } from "./axiosInstance"
 
 async function GetMovies(){
     try {
-      /*   const response = await axiosInstance.get("/movie")
-        return response.data */
         const {data} = await axiosInstance.get("/movie/popular?page=1&language=es-ES")
         return data
     } catch (error) {
@@ -23,10 +21,7 @@ async function NowPlaying(){
 async function getMovieDetails(movie_id: number) {
     try {
         const { data } = await axiosInstance.get(`/movie/${movie_id}?language=es-ES`);
-        console.log(data.genres)
-        console.log(data)
         return data; 
-        
     } catch (error) {
         console.log(error); 
         return error; 
@@ -78,6 +73,32 @@ async function getSearchFilm(query: string){
         return error; 
     }
   }
+async function getGenres(){
+    try {
+       const { data } = await axiosInstance.get(`genre/movie/list?language=es`);
+        return data;  
+    } catch (error) {
+        console.log(error); 
+        return error; 
+    }
+}
+
+async function GetMoviesList(page: number, sortOrder: string, selectedGenres: string[]) {
+    try {
+        const params = {
+            page,
+            language: "es-ES",
+            sort_by: sortOrder || "popularity.desc",
+            with_genres: selectedGenres.join(','),
+        };
+        console.log("SE EJECUTA GETMOVIESLIST EN APISERVICECON PARAMS:", params);
+        const { data } = await axiosInstance.get('/discover/movie?include_adult=false', { params });
+        return data;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+    }
 
 export const APIService = {
     GetMovies,
@@ -88,4 +109,7 @@ export const APIService = {
     getFilmVideos,
     getFilmImages,
     getSearchFilm,
+    getGenres,
+    GetMoviesList,
+    
 };
