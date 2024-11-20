@@ -1,37 +1,511 @@
 {
   "userMovies": [
     {
-      "id": "9ed21082-17e1-4eb2-be06-49ae7fe0889a",
-      "title": "Testing",
-      "originalTitle": "Testerus",
+      "id": "f3b9f93b-e502-42fb-88c2-d95f19628190",
+      "title": "Titulo real",
+      "originalTitle": "Real title",
       "imageUrl": "",
-      "description": "Probando a ver si se muestra en la base de datos de json-server. Esperemos que si",
+      "description": "Descripcion real. Totalmente real",
       "genres": [
-        "terror",
-        "aventura"
+        {
+          "id": 10751,
+          "name": "Familia"
+        },
+        {
+          "id": 16,
+          "name": "Animación"
+        },
+        {
+          "id": 99,
+          "name": "Documental"
+        },
+        {
+          "id": 28,
+          "name": "Acción"
+        },
+        {
+          "id": 35,
+          "name": "Comedia"
+        }
       ],
-      "releaseDate": "2024-09-26T03:00:00.000Z",
-      "rated": "8",
+      "releaseDate": "2024-10-31",
+      "rated": 4,
       "posterUrl": "",
       "status": "Lanzado",
       "spokenLanguages": [],
       "budget": 0,
+      "revenue": 0,
       "videos": [],
       "images": [],
       "posters": [],
+      "source": "database"
+    },
+    {
+      "id": "ab821c6f-64e8-40b5-b502-f17be55f4840",
+      "title": "Testeando de nuevo a ver si funciona",
+      "originalTitle": "Real title",
+      "imageUrl": "",
+      "description": "Me gustaria saber si esto funciona correctamente por lo que estoy probando a ver que tal",
+      "genres": [
+        null,
+        null,
+        99,
+        12,
+        16
+      ],
+      "releaseDate": "2024-10-31",
+      "rated": 9,
+      "posterUrl": "",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "source": "database"
+    },
+    {
+      "id": "792a50a1-5119-46ef-8787-99f7b87d0a5a",
+      "title": "La caballera dragón",
+      "originalTitle": "Le chevalier dragon",
+      "imageUrl": "",
+      "description": "El dragon Pepe vuela por todos lados, etc , etc. Quiere mucho oro asi que va a invadir una aldea toda epica pero aparece la caballera dragon para intentar derrotarlo, esperemos que ella si pueda porque yo no pude",
+      "genres": [
+        {
+          "id": 80,
+          "name": "Crimen"
+        },
+        {
+          "id": 12,
+          "name": "Aventura"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "releaseDate": "2024-10-13T03:00:00.000Z",
+      "rated": 8,
+      "posterUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1730294482/ej0momf0thq36rvvuaiu.jpg",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
+      "source": "database"
+    },
+    {
+      "id": "040f484b-77cd-4499-8a59-830455ccf5b1",
+      "title": "Angeles de Shibuya",
+      "originalTitle": "アンヘレス・デ・渋谷",
+      "imageUrl": "",
+      "description": "Shibuya es el distrito homónimo del distrito de Shibuya, Tokio, Japón. Se encuentra en el suroeste del centro de Tokio, en el lado este de la estación de Shibuya. Con numerosas tiendas, oficinas e instalaciones públicas, es uno de los tres grandes subcentros del oeste de Tokio junto a Shinjuku e Ike",
+      "genres": [
+        {
+          "id": 28,
+          "name": "Acción"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 80,
+          "name": "Crimen"
+        },
+        {
+          "id": 16,
+          "name": "Animación"
+        }
+      ],
+      "releaseDate": "2024-11-30",
+      "rated": 9,
+      "posterUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1730297029/mwlzbjsfou5ju0tsaqks.jpg",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
+      "source": "database"
+    },
+    {
+      "id": "095a464e-895c-421d-afdf-1918fc8d5ff8",
+      "title": "Días de perros",
+      "originalTitle": "Dog days",
+      "imageUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1730386787/cvouvdh7noudob8px4zh.png",
+      "description": "El perro es un animal doméstico, mamífero, cuadrúpedo y carnívoro, de la familia de los cánidos…\nConvive con los seres humanos desde hace unos 16.000 años, habiendo sido uno de los primeros animales en ser domesticado. Es también una de las especies de animal doméstico más extendida, con cerca de 90",
+      "genres": [
+        {
+          "id": 35,
+          "name": "Comedia"
+        },
+        {
+          "id": 16,
+          "name": "Animación"
+        },
+        {
+          "id": 12,
+          "name": "Aventura"
+        }
+      ],
+      "releaseDate": "2024-10-08",
+      "rated": 10,
+      "posterUrl": "https://marketplace.canva.com/EAFHckGoCkM/1/0/1131w/canva-cartel-poster-smos-pet-friendly-simple-rosa-EsmPelhacWk.jpg",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
+      "source": "database"
+    },
+    {
+      "id": "9916f626-0e52-4e3a-ac3b-710ebb0ccd5b",
+      "title": "Sonic",
+      "originalTitle": "aoksdfmaosd",
+      "imageUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1730298144/afss8kzzbsrfnnxz7kn5.png",
+      "description": "admofkasmdofmasdfmasdfa",
+      "genres": [
+        {
+          "id": 99,
+          "name": "Documental"
+        }
+      ],
+      "releaseDate": "Invalid Date",
+      "rated": 4,
+      "posterUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1730298146/bhla13vut7z5yrsikuqx.jpg",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
+      "source": "database"
+    },
+    {
+      "id": "9382277d-75d3-41b7-9d10-fb4201c70c4a",
+      "title": "Messi ",
+      "originalTitle": "Messy",
+      "imageUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732106688/tx0lrzyqqpmhlbzqvggs.png",
+      "description": "Messi tiene que jugar un partido muy importante, la final del mundial del año 2026. Se tiene que enfrentar a su maximo rival: Quiroga Lautaro.",
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 99,
+          "name": "Documental"
+        },
+        {
+          "id": 16,
+          "name": "Animación"
+        }
+      ],
+      "releaseDate": "2024-11-14",
+      "rated": 8,
+      "posterUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732106646/hfywf3o08fyc2dpru24x.png",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
+      "source": "database"
+    },
+    {
+      "id": "a80c293d-a4ad-47a8-91f8-6fe6c0bd1bd6",
+      "title": "Arepa",
+      "originalTitle": "Arepa",
+      "imageUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732106983/jad70wkgy0kec9ihrq28.png",
+      "description": "La arepa se ha convertido en el alimento definitivo, pero aun así hay detractores que dicen que las empanadas son superiores. Dos bandos se enfrentan, empanadas contra arepas. Solo uno ganara y solo una comida podrá ser nombrada definitiva",
+      "genres": [
+        {
+          "id": 35,
+          "name": "Comedia"
+        },
+        {
+          "id": 16,
+          "name": "Animación"
+        },
+        {
+          "id": 28,
+          "name": "Acción"
+        }
+      ],
+      "releaseDate": "2024-11-22",
+      "rated": 7,
+      "posterUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732106941/kk1ez3m29zkrulwswdde.png",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
+      "source": "database"
+    },
+    {
+      "id": "802411ee-a1be-403a-8941-716d62d59df1",
+      "title": "Los chicos del siglo 20",
+      "originalTitle": "20th century boys",
+      "imageUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732107443/h9jyzsxurpdvwjhz56du.png",
+      "description": "Algo raro ocurre en Japón, gente aparece sin muerta sin sangre, personas desaparecen, el mundo claramente esta cambiando. ¿Qué esta sucediendo?\n\"Amigo\" es tu amigo, debes ser amigable, todos somos amigos. Pronto tendrás tu salvacion- Amigo",
+      "genres": [
+        {
+          "id": 28,
+          "name": "Acción"
+        },
+        {
+          "id": 16,
+          "name": "Animación"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "releaseDate": "2024-11-11",
+      "rated": 10,
+      "posterUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732107244/mwcqsmhzj8nva3qijfy8.png",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
+      "source": "database"
+    },
+    {
+      "id": "fdc7f062-3461-4843-92c9-d9d8513adc4d",
+      "title": "Mis ultimos días en Fever High",
+      "originalTitle": "My last days at Fever High",
+      "imageUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732107554/in6sef8mwwud1rh6m3ma.png",
+      "description": "El colegio era todo para Sara, siempre fue la mejor alumna y siempre tuvo muchos amigos. Pero sin darse cuenta, esta etapa de su vida esta por terminar, por lo que hara todo lo posible para pasar los últimos mejores días en Fever High",
+      "genres": [
+        {
+          "id": 16,
+          "name": "Animación"
+        },
+        {
+          "id": 35,
+          "name": "Comedia"
+        }
+      ],
+      "releaseDate": "2024-12-12",
+      "rated": 6,
+      "posterUrl": "http://res.cloudinary.com/drhct2vup/image/upload/v1732107537/cvzh707hjsjt90ckka5i.png",
+      "status": "Lanzado",
+      "spokenLanguages": [],
+      "budget": 0,
+      "revenue": 0,
+      "videos": [],
+      "images": [],
+      "posters": [],
+      "runtime": 0,
       "source": "database"
     }
   ],
   "favMovies": [
     {
-      "id": "519182",
-      "title": "Gru 4. Mi villano favorito",
-      "posterUrl": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/kqph8UWNOoYgTjYnkAx8dRlLLCq.jpg"
+      "id": "1028318",
+      "title": "Mi querido monstruo",
+      "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/mYG81JbSmciPPasFZQ9IO1JRgPZ.jpg",
+      "source": "api"
+    },
+    {
+      "id": "040f484b-77cd-4499-8a59-830455ccf5b1",
+      "title": "Angeles de Shibuya",
+      "poster_path": "http://res.cloudinary.com/drhct2vup/image/upload/v1730297029/mwlzbjsfou5ju0tsaqks.jpg",
+      "source": "database"
     },
     {
       "id": "532067",
       "title": "KonoSuba. La Película. La Leyenda del Carmesí",
-      "posterUrl": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aaAySq2nI9kYQZzom7ymvoN2Kh.jpg"
+      "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aaAySq2nI9kYQZzom7ymvoN2Kh.jpg",
+      "source": "api"
+    },
+    {
+      "id": "912649",
+      "title": "Venom: El último baile",
+      "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/b0obWWCLRVRqRzlSK1LSGtADkLM.jpg",
+      "source": "api"
+    },
+    {
+      "id": "120811",
+      "title": "K-On! La película",
+      "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/v3C7SEYQC7bV5nCFXpiTnISjMpU.jpg",
+      "source": "api"
+    },
+    {
+      "id": "1184918",
+      "title": "Robot salvaje",
+      "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/a0a7RC01aTa7pOnskgJb3mCD2Ba.jpg",
+      "source": "api"
+    },
+    {
+      "id": "1147400",
+      "title": "Miraculous World: París, las aventuras de Shadybug y Claw Noir",
+      "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/A7YDBDf9z1jvORT3omeD01Ez47S.jpg",
+      "source": "api"
+    }
+  ],
+  "userLists": [
+    {
+      "id": "1",
+      "name": "Ver mas tarde",
+      "movies": [
+        {
+          "id": "1147400",
+          "title": "Miraculous World: París, las aventuras de Shadybug y Claw Noir",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/A7YDBDf9z1jvORT3omeD01Ez47S.jpg",
+          "source": "api"
+        },
+        {
+          "id": "812037",
+          "title": "El Último verano",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/eUh6lzns97I11wwBBbxmyQXspJP.jpg",
+          "source": "api"
+        },
+        {
+          "id": "1184918",
+          "title": "Robot salvaje",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/a0a7RC01aTa7pOnskgJb3mCD2Ba.jpg",
+          "source": "api"
+        },
+        {
+          "id": "698687",
+          "title": "Transformers One",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/1jzVCZxBmgvpGILuEU8icfX77Io.jpg",
+          "source": "api"
+        },
+        {
+          "id": "814889",
+          "title": "Nunca te sueltes",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/6CdgzmiyjU1aPV6zjfWR8cMCN79.jpg",
+          "source": "api"
+        },
+        {
+          "id": "234538",
+          "title": "Gallo Claudio: Mi mamá fue un gallo",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/e9vkLW0qOKtOJNkFObqltAT3z2g.jpg",
+          "source": "api"
+        },
+        {
+          "id": "1184918",
+          "title": "Robot salvaje",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/a0a7RC01aTa7pOnskgJb3mCD2Ba.jpg",
+          "source": "api"
+        },
+        {
+          "id": "1087822",
+          "title": "Hellboy: The Crooked Man",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/ExFaxmvlGxBmUBVKv9ey94fNyy.jpg",
+          "source": "api"
+        },
+        {
+          "id": "912649",
+          "title": "Venom: El último baile",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/b0obWWCLRVRqRzlSK1LSGtADkLM.jpg",
+          "source": "api"
+        },
+        {
+          "id": "1184918",
+          "title": "Robot salvaje",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/a0a7RC01aTa7pOnskgJb3mCD2Ba.jpg",
+          "source": "api"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mi lista 2",
+      "movies": [
+        {
+          "id": "933260",
+          "title": "La sustancia",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/cQD1qEnPOKUPHAui0okOLZSgitu.jpg",
+          "source": "api"
+        },
+        {
+          "id": "945961",
+          "title": "Alien: Romulus",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/utT7f4950qKxfuRnIwza2erIfn8.jpg",
+          "source": "api"
+        },
+        {
+          "id": "475557",
+          "title": "Joker",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/v0eQLbzT6sWelfApuYsEkYpzufl.jpg",
+          "source": "api"
+        },
+        {
+          "id": "1087822",
+          "title": "Hellboy: The Crooked Man",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/ExFaxmvlGxBmUBVKv9ey94fNyy.jpg",
+          "source": "api"
+        },
+        {
+          "id": "912649",
+          "title": "Venom: El último baile",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/b0obWWCLRVRqRzlSK1LSGtADkLM.jpg",
+          "source": "api"
+        }
+      ]
+    },
+    {
+      "id": "1b08defc-a81d-4e9b-965c-40803cff1029",
+      "name": "Pelis que quiero ver mañana",
+      "poster_path": "",
+      "movies": [
+        {
+          "id": "532067",
+          "title": "KonoSuba. La Película. La Leyenda del Carmesí",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/5aaAySq2nI9kYQZzom7ymvoN2Kh.jpg",
+          "source": "api"
+        },
+        {
+          "id": "460399",
+          "title": "Love, Chunibyo & Other Delusions the Movie: Take on Me!",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/aJ7iLBM0JPSptBRhLuT3FQXzSEK.jpg",
+          "source": "api"
+        },
+        {
+          "id": "477776",
+          "title": "Code Geass: Lelouch of the Rebellion I — Initiation",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/1UlSRmja7lrZHHDtK6lWcJXmVpQ.jpg",
+          "source": "api"
+        }
+      ]
+    },
+    {
+      "id": "131251d7-2e31-4b19-9a13-8e0165119401",
+      "name": "Pelis de robots",
+      "poster_path": "",
+      "movies": [
+        {
+          "id": "1184918",
+          "title": "Robot salvaje",
+          "poster_path": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/a0a7RC01aTa7pOnskgJb3mCD2Ba.jpg",
+          "source": "api"
+        }
+      ]
     }
   ]
 }

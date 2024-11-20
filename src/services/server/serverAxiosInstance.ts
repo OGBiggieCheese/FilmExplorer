@@ -1,5 +1,6 @@
 import axios, { AxiosError } from "axios";
-const baseUrl = "http://localhost:3001";
+const baseUrl = import.meta.env.VITE_DATABASE_URL;
+
 export const serverAxiosInstance = axios.create({
   baseURL: baseUrl,
 });
