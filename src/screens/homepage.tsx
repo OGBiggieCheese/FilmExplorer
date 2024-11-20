@@ -52,9 +52,12 @@ function Homepage() {
         <Slider title="Lo mas popular">
           {movies.map((movie) => (
             <Card
+              key={movie.id}
               id={movie.id}
               title={movie.title}
-              imageUrl={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
+              poster_path={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
+              source={movie.source}
+              showButton={true}
             />
           ))}
         </Slider>
@@ -64,9 +67,12 @@ function Homepage() {
         <Slider title="En cartelera">
           {now.map((now) => (
             <Card
+              key={now.id}
               id={now.id}
               title={now.title}
-              imageUrl={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${now.poster_path}`}
+              poster_path={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${now.poster_path}`}
+              source={now.source}
+              showButton={true}
             />
           ))}
         </Slider>
