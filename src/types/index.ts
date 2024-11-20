@@ -2,10 +2,20 @@ interface ISpokenLanguages{
     lang: string,
     english_name: string,
 }
+export interface IMovieList {
+    id: string;
+    name: string;
+    poster_path: string;
+    movies: IFilm[];
+  }
+export interface IMediaItem {
+    key: string,
+    src: string,
+}
 export interface IMedia{
-    videos: Array<{ key: string; src: string }>;
-    images: Array<{ key: string; src: string }>;
-    posters: Array<{ key: string; src: string }>;
+    videos: IMediaItem[],
+    images: IMediaItem[],
+    posters: IMediaItem[],
 } 
 export interface IGenre{
     id: string,
@@ -25,10 +35,11 @@ export interface IFilm{
     spokenLanguages: ISpokenLanguages[],
     budget: number,
     revenue: number,
-    videos: IMedia[],
-    images: IMedia[],
-    posters: IMedia[],
+    videos: IMediaItem[],
+    images: IMediaItem[],
+    posters: IMediaItem[],
     id: string,
+    runtime: number,
     source: "api" | "database",
 }
 
@@ -41,10 +52,19 @@ export interface ICast{
 export interface ICard{
     id: number;
     title: string;
-    imageUrl: string;
+    poster_path: string;
+    showButton?: boolean;
+    source: "api" | "database",
+}
+
+export interface IFavouriteFilm{
+    id: string;
+    title: string;
+    poster_path: string;
     source: "api" | "database",
 }
 
 export interface IFilmForm extends Omit<IFilm, "id">{
     id: string;
 }
+
