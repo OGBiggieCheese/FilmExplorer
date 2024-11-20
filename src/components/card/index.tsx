@@ -4,17 +4,29 @@ import { ICard } from "../../types";
 
 const defaultImage =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo6yxIZRkMjjGozYJIXfFO99wPZa4K8cXh4Q&s";
-const Card: React.FC<ICard> = ({ id, title, imageUrl }) => {
+
+const Card: React.FC<ICard> = ({
+  id,
+  title,
+  poster_path,
+  source,
+  showButton,
+}) => {
   const validImageUrl =
-    imageUrl && !imageUrl.endsWith("null") ? imageUrl : defaultImage;
+    poster_path &&
+    !poster_path.endsWith("null") &&
+    !poster_path.endsWith("undefined")
+      ? poster_path
+      : defaultImage;
+
   return (
-    <Link to={`/film/${id}`}>
-      <div className={styles.card}>
+    <div className={styles.card}>
+      <Link to={`/film/${source}/${id}`}>
         <img src={validImageUrl} alt={title} className={styles.cardImage} />
-        <h4>{title}</h4>
-        <button className={styles.favoriteButton}>+</button>
-      </div>
-    </Link>
+        <h4 className={styles.cardTitle}>{title}</h4>
+      </Link>
+      {showButton && <button className={styles.favoriteButton}>+</button>}
+    </div>
   );
 };
 
