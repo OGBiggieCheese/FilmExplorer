@@ -1,0 +1,67 @@
+@import "../../scss/variables";
+
+.titleEdit {
+  text-align: center;
+  margin-top: 0;
+}
+.flex {
+  display: flex;
+
+  .ant-upload-drag-container {
+    height: 100px !important;
+    margin-top: 0px !important;
+    vertical-align: unset !important;
+    p {
+      color: $whiteFE !important;
+    }
+  }
+  .ant-upload-drag-icon {
+    margin-top: 0px !important;
+  }
+  .uploadImage {
+    min-width: 30%;
+    min-height: 500px;
+    margin-right: 5rem;
+    border-radius: 20px;
+    background-color: transparent !important;
+    max-width: 30%;
+    text-align: center;
+    p {
+      margin-right: 0px;
+    }
+  }
+  .data {
+    width: 100%;
+    margin-right: 10rem;
+    button {
+      border-radius: 20px;
+      background-color: $lavanda;
+      &:hover {
+        border-color: $whiteFE;
+      }
+    }
+    input {
+      margin-top: 0px;
+    }
+    h5 {
+      margin-top: 0px;
+      margin-bottom: 0.8rem;
+      color: white;
+    }
+    .id {
+      width: 160px;
+      margin-right: 2rem;
+    }
+    .titles {
+      display: flex;
+      gap: 2rem;
+      input {
+        width: 324px;
+      }
+    }
+  }
+}
+
+.id {
+  color: white !important;
+}
