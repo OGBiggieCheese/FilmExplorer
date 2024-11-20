@@ -30,9 +30,10 @@ export default function Search() {
         {results.map((movie: any) => (
           <Card
             key={movie.id}
+            source={movie.source}
             id={movie.id}
             title={movie.title}
-            imageUrl={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            poster_path={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           />
         ))}
       </Slider>

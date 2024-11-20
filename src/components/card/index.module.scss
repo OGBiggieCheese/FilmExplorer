@@ -2,6 +2,7 @@
 
 .card {
   max-width: 160px;
+
   max-height: 264px;
   border-radius: 20px;
   margin: 16px;
@@ -12,6 +13,7 @@
 }
 .cardImage {
   border-radius: 16px;
+  min-height: 226px;
   max-width: 160px;
   max-height: 264px;
 

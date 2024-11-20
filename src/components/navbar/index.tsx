@@ -29,7 +29,9 @@ export default function Navbar() {
       <Link to="/">
         <h3>FilmExplorer</h3>
       </Link>
-      <h5>Peliculas</h5>
+      <Link to="/films">
+        <h5>Peliculas</h5>
+      </Link>
       <Link to="/">
         <h5>Series</h5>
       </Link>
@@ -47,7 +49,10 @@ export default function Navbar() {
           &times;
         </a>
         <Link to="/profile">
-          <img src="https://media.admagazine.com/photos/637d11a6e63c8afac40e7a01/1:1/w_2896,h_2896,c_limit/1442809583"></img>
+          <img
+            src="https://media.admagazine.com/photos/637d11a6e63c8afac40e7a01/1:1/w_2896,h_2896,c_limit/1442809583"
+            alt="profile"
+          />
           <h3>Messi</h3>
         </Link>
         <Link to="/profile">

@@ -36,22 +36,10 @@
     color: $whiteFE;
     margin-left: 0px;
     margin-right: 1.5rem;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 13.5%;
-      bottom: 16px;
-      width: 90px;
-      height: 3px;
-      transform: skew(-12deg) translateX(-50%);
-      background: $lavanda;
-      z-index: -1;
-    }
   }
   button:last-of-type {
     margin-left: auto;
-    margin-right: 64px;
+    margin-right: 2rem;
     color: $lavanda;
   }
 }
