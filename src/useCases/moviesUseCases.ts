@@ -1,20 +1,33 @@
 import { APIService} from "../services/api/apiService"
 import { GlobalStateService } from "../services/globalStateService"
-import { IFilm } from "../types"
+import { ICard, IFilm } from "../types"
 
 /* Homepage */
 async function getMovies(){
     try {
         const response = await APIService.GetMovies()
-        GlobalStateService.setMovies(response.results.slice(0,16))
+        const moviesMaped = response.results.map((movie: any)=> ({
+            id: movie.id,
+            title: movie.title,
+            poster_path: movie.poster_path,
+            source: "api"
+        }))
+        GlobalStateService.setMovies(moviesMaped.slice(0,16))
     } catch (error) {
         console.log(error)
     }
 }
+
 async function NowPlaying(){
     try {
         const response = await APIService.NowPlaying()
-        GlobalStateService.setNow(response.results.slice(0,16))
+        const moviesMaped = response.results.map((movie: any)=> ({
+            id: movie.id,
+            title: movie.title,
+            poster_path: movie.poster_path,
+            source: "api"
+        }))
+        GlobalStateService.setNow(moviesMaped.slice(0,16))
     } catch (error) {
         console.log(error)
     }
@@ -35,11 +48,13 @@ async function filmDetails(movie_id: number) {
             description: response.overview,
             imageUrl: `https://image.tmdb.org/t/p/original${response.backdrop_path}`,
             posterUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2${response.poster_path}`,
-            genres: response.genres.map((genre: { name: string }) => genre.name),
+            genres: response.genres,
             releaseDate: response.release_date,
             rated: response.vote_average,
             status: response.status,
             budget: response.budget,
+            revenue: response.revenue,
+            runtime: response.runtime,
             source: "api",
             spokenLanguages: response.spoken_languages.map(
               (lang: { english_name: string }) => lang.english_name
@@ -56,8 +71,6 @@ async function filmDetails(movie_id: number) {
               key: poster.file_path,
               src: `https://image.tmdb.org/t/p/w220_and_h330_bestv2${poster.file_path}`,
             })),
-            
-
         };
         return GlobalStateService.setFilmDetails(filmData);
     } catch (error) {
@@ -73,14 +86,66 @@ async function getMovieCredits(movie_id: number){
 
 async function getMovieRecommendations(movie_id: number){
     const response = await APIService.getMovieRecommendations(movie_id) 
-    GlobalStateService.setRecommendations(response.results.slice(0,16))
+    const moviesMaped = response.results.map((movie: any)=> ({
+        id: movie.id,
+        title: movie.title,
+        poster_path: movie.poster_path,
+        source: "api"
+    }))
+    GlobalStateService.setRecommendations(moviesMaped.slice(0,16))
 }
 
 async function getSearchFilm(query: string) {
     const response= await APIService.getSearchFilm(query)
-    console.log(response)
-    GlobalStateService.setSearch(response.results)
+    const moviesMaped = response.results.map((movie: ICard)=> ({
+        id: movie.id,
+        title: movie.title,
+        poster_path: movie.poster_path,
+        source: "api"
+    }))
+    GlobalStateService.setSearch(moviesMaped)
 }
+async function getGenres(){
+    try {
+        const response = await APIService.getGenres()
+        GlobalStateService.setGenres(response.genres)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+async function GetMoviesList(page: number, sortOrder: string, selectedGenres: string[]) {
+    try {
+        const response = await APIService.GetMoviesList(page, sortOrder, selectedGenres);
+        console.log("RESPONSE DE GETMOVIESLIST EN MOVIEUSECASES TIENE", response);
+        const moviesMaped = response.results.map((movie: ICard) => ({
+            id: movie.id,
+            title: movie.title,
+            poster_path: movie.poster_path,
+            source: "api"
+        }));
+        GlobalStateService.setMoviesList(moviesMaped);
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function getTrailer(movie_id: string){
+      try {
+        const videos = await APIService.getFilmVideos(Number(movie_id));
+        const trailer = videos.results.find(
+          (video: any) => video.type === "Trailer"
+        );
+        if (trailer) {
+          return trailer.key;
+        }
+      } catch (error) {
+        console.error("Error fetching trailer:", error);
+      }
+}
+
 
 export const movieUseCases = {
     getMovies,
@@ -89,6 +154,8 @@ export const movieUseCases = {
     getMovieCredits,
     getMovieRecommendations,
     getSearchFilm,
-
+    getGenres,
+    GetMoviesList,
+    getTrailer
 } 
 
