@@ -31,6 +31,7 @@ async function getJSONMovies(){
 async function getLists(){
     try {
         const response = await serverService.getLists()
+        GlobalStateService.setLists(response)
         return response
     } catch (error) {
         console.log(error)

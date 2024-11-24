@@ -12,11 +12,7 @@ function Profile() {
 
   useEffect(() => {
     JSONMovieUseCases.getFavourites();
-    const fetchLists = async () => {
-      const fetchedLists = await JSONMovieUseCases.getLists();
-      GlobalStateService.setLists(fetchedLists);
-    };
-    fetchLists();
+    JSONMovieUseCases.getLists();
   }, []);
 
   return (
