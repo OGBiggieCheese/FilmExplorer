@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { ICard, IFilm, IMovieList } from '../types';
+import { ICard, IFilm, IList, IMovieList } from '../types';
 
 interface IGlobalState{
     movies: ICard[];
@@ -9,14 +9,13 @@ interface IGlobalState{
     recommendations: ICard[]
     search: ICard[]
     favourites: ICard[]
-    jsonMovies: any[]
+    jsonMovies: ICard[]
     genres: any[]
     page: number
     lists: IMovieList[]
     listFilms: any[]
     filters: any
 }
-
 const initialStoreData: IGlobalState = {
     movies:[],
     now:[],
@@ -101,7 +100,7 @@ function setRecommendations(recommendations: ICard[]){
 function getFavourites(){
     return globalState((state) => state.favourites)
 }
-function setFavourites(favourites: any[]){
+function setFavourites(favourites: ICard[]){
     globalState.setState((prev) => {
         return {
             ...prev,
@@ -206,7 +205,10 @@ function setLists(lists: any[]){
         }
     })
 }
-function setListFilms(list: any, film: any) {
+function getListFilms(){
+    return globalState((state) => state.listFilms)
+}
+function setListFilms(list: IList, film: any) {
     globalState.setState((prev) => {
         const updatedLists = prev.lists.map((l) => {
             if (l.id === list.id) {
@@ -223,9 +225,7 @@ function setListFilms(list: any, film: any) {
         };
     });
 }
-function getListFilms(){
-    return globalState((state) => state.listFilms)
-}
+
 function clearMovies() {
     globalState.setState((prev) => ({
         ...prev,

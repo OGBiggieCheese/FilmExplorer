@@ -3,27 +3,22 @@ import Card from "../../components/card";
 import "./list.scss";
 import { JSONMovieUseCases } from "../../useCases/JSONMoviesUseCases";
 import { useParams } from "react-router-dom";
-import { serverService } from "../../services/server/serverService";
+import { GlobalStateService } from "../../services/globalStateService";
+import { IList } from "../../types";
 
 export default function List() {
   const [listFilms, setListFilms] = useState([]);
   const [list, setList] = useState<any>(null);
   const { listID } = useParams<{ listID: string }>();
+  const lists = GlobalStateService.getLists();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const films = await JSONMovieUseCases.getListFilms(listID || "");
-        const lists = await serverService.getLists();
-        const lista = lists.find((list: any) => list.id === listID);
-        setList(lista);
-        setListFilms(films.movies || []);
-      } catch (error) {
-        console.error("Error fetching list films:", error);
-      }
-    };
-
-    fetchData();
+    JSONMovieUseCases.getLists();
+    const lista = lists.find((list: IList) => list.id === listID);
+    setList(lista);
+    JSONMovieUseCases.getListFilms(listID || "").then((films) => {
+      setListFilms(films.movies);
+    });
   }, [listID]);
 
   return (

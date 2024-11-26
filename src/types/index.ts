@@ -64,6 +64,12 @@ export interface IFavouriteFilm{
     source: "api" | "database",
 }
 
+export interface IList{
+    id: string;
+    name: string;
+    movies: IFilm[];
+}
+
 export interface IFilmForm extends Omit<IFilm, "id">{
     id: string;
 }

@@ -129,7 +129,7 @@ async function createFilm(film: IFilmForm){
 async function getListFilms(listID: string){
     try {
         const response = await serverService.getListFilms(listID);
-        return response;
+        return response
     } catch (error) {
         console.log(error);
     }
